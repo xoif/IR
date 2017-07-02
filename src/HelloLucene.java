@@ -24,7 +24,7 @@ import java.nio.file.Path;
 
 @SuppressWarnings("ALL")
 public class HelloLucene {
-    Analyzer analyzer = new StandardAnalyzer();
+    Analyzer analyzer = new BoarischAnalyzer();
     String indexPath = "";
     String pathToWarc;
     String fieldName = "title";
