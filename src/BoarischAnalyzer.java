@@ -20,7 +20,7 @@ public class BoarischAnalyzer extends Analyzer {
         final Tokenizer source = new StandardTokenizer();
         TokenStream result = new StandardFilter(source);
         result = new LowerCaseFilter(result);
-        result = new SetKeywordMarkerFilter(result, exclusionSet);
+        //result = new SetKeywordMarkerFilter(result, exclusionSet);
         result = new GermanNormalizationFilter(result);
         result = new GermanLightStemFilter(result);
         return new TokenStreamComponents(source, result);
