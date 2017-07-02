@@ -13,7 +13,6 @@ import java.io.FileInputStream;
 import java.nio.file.*;
 
 
-
 @SuppressWarnings("ALL")
 public class HelloLucene {
     Analyzer analyzer = new StandardAnalyzer();
@@ -46,31 +45,25 @@ public class HelloLucene {
 
         System.out.println("Indexing: " + pathToWarc);
 
-        // Lucene initialisieren
         IndexWriterConfig iwconf = new IndexWriterConfig(analyzer);
         Path path = FileSystems.getDefault().getPath(indexPath);
         Directory store = new SimpleFSDirectory(path);
         IndexWriter iw = new IndexWriter(store, iwconf);
 
-        // Warc Datei laden
         FileInputStream fileInputStream = new FileInputStream(pathToWarc);
         DataInputStream inStream = new DataInputStream(fileInputStream);
 
-        // Stream verarbeiten
         WarcRecord thisWarcRecord;
-        while ((thisWarcRecord=WarcRecord.readNextWarcRecord(inStream))!=null) {
-            // response record gefunden
+        while ((thisWarcRecord = WarcRecord.readNextWarcRecord(inStream)) != null) {
 
             if (thisWarcRecord.getHeaderRecordType().equals("response")) {
-                // WarcHTML record erzeugen
-                WarcHTMLResponseRecord htmlRecord=new WarcHTMLResponseRecord(thisWarcRecord);
 
-                // daten aus dem WarcRecord lesen
+                WarcHTMLResponseRecord htmlRecord = new WarcHTMLResponseRecord(thisWarcRecord);
+
                 String targetTrecID = htmlRecord.getTargetTrecID();
                 String targetURI = htmlRecord.getTargetURI();
                 String content = thisWarcRecord.getContentUTF8();
 
-                // Dokument erzeugen
                 Document doc = new Document();
                 doc.add(new TextField(fieldNameTrecID, targetTrecID, Field.Store.YES));
                 doc.add(new TextField(fieldNameTargetURI, targetURI, Field.Store.YES));
@@ -95,7 +88,7 @@ public class HelloLucene {
         }
     }
 
-    public void searchAndDisplay(String searchText) throws Exception{
+    public void searchAndDisplay(String searchText) throws Exception {
         System.out.println("Query: " + searchText);
         //query
         QueryParser qParser = new QueryParser(fieldNameContent, analyzer);
@@ -107,7 +100,7 @@ public class HelloLucene {
         int topHits = 10;
         TopDocs hits = is.search(q, topHits);
         //display
-        for(ScoreDoc hit : hits.scoreDocs){
+        for (ScoreDoc hit : hits.scoreDocs) {
             Document doc = is.doc(hit.doc);
             System.out.println(doc.get(fieldNameTrecID) + " - " + doc.get(fieldNameTargetURI));
         }
