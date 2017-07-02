@@ -9,6 +9,7 @@ import java.nio.file.*;
 
 
 
+@SuppressWarnings("ALL")
 public class HelloLucene {
     Analyzer analyzer = new StandardAnalyzer();
     String indexPath = "";
@@ -33,6 +34,7 @@ public class HelloLucene {
 
     public void index() {
         try {
+
             addDocs(new String[]{"hi this is doc1",
                     "doc2: this contains information about our lecture information retrieval", "doc3: this is our first example"});
         } catch (Exception e) {
