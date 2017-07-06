@@ -25,7 +25,7 @@ public class BoarischAnalyzer extends Analyzer {
      */
     public BoarischAnalyzer() {
         try {
-            stopSet = WordlistLoader.getWordSet(new BufferedReader(new FileReader(DEFAULT_STOPWORD_FILE)));
+            stopSet = WordlistLoader.getSnowballWordSet(new BufferedReader(new FileReader(DEFAULT_STOPWORD_FILE)));
                     //WordlistLoader.getSnowballWordSet(IOUtils.getDecodingReader(SnowballFilter.class, DEFAULT_STOPWORD_FILE, StandardCharsets.UTF_8));
         } catch (Exception e) {
             e.printStackTrace();
