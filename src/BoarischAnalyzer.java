@@ -39,9 +39,9 @@ public class BoarischAnalyzer extends Analyzer {
         if (stopSet != null) {
             result = new StopFilter(result, stopSet);
         }
-      //  result = new SetKeywordMarkerFilter(result, exclusionSet);
         result = new GermanNormalizationFilter(result);
         result = new GermanLightStemFilter(result);
+        result = new DoubleVowelFilter(result);
         return new TokenStreamComponents(source, result);
     }
 }

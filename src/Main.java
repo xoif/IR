@@ -7,7 +7,7 @@ public class Main {
         HelloLucene hl = new HelloLucene(indexRecord, pathToWarc);
         try {
             hl.index();
-            hl.searchAndDisplay("Geburtsdoog");
+            hl.searchAndDisplay("Geburtsdog");
             hl.searchAndDisplay("Audi");
             hl.searchAndDisplay("Fingerhakeln");
         } catch (Exception e) {
