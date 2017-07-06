@@ -19,11 +19,21 @@
       <file leaf-file-name="BoarischAnalyzer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BoarischAnalyzer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="179">
+              <caret line="27" column="107" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="107" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WordlistLoader.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/vendor/lucene-core-6.5.1.jar!/org/apache/lucene/analysis/WordlistLoader.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="40" column="34" lean-forward="true" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -760,12 +770,12 @@
       <workItem from="1499009370495" duration="75000" />
       <workItem from="1499010191860" duration="3738000" />
       <workItem from="1499243284312" duration="35000" />
-      <workItem from="1499336524817" duration="1779000" />
+      <workItem from="1499336524817" duration="2143000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9736000" />
+    <option name="totallyTimeSpent" value="10100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -1196,14 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/vendor/lucene-core-6.5.1.jar!/org/apache/lucene/analysis/WordlistLoader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="67" column="42" lean-forward="false" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1230,10 +1232,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/vendor/lucene-core-6.5.1.jar!/org/apache/lucene/analysis/WordlistLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="40" column="34" lean-forward="true" selection-start-line="40" selection-start-column="34" selection-end-line="40" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BoarischAnalyzer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="179">
+          <caret line="27" column="107" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="107" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

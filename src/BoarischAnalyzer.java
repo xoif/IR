@@ -1,12 +1,11 @@
 import org.apache.lucene.analysis.*;
 import org.apache.lucene.analysis.de.GermanLightStemFilter;
 import org.apache.lucene.analysis.de.GermanNormalizationFilter;
-import org.apache.lucene.analysis.snowball.SnowballFilter;
 import org.apache.lucene.analysis.standard.StandardFilter;
 import org.apache.lucene.analysis.standard.StandardTokenizer;
-import org.apache.lucene.util.IOUtils;
 
-import java.nio.charset.StandardCharsets;
+import java.io.BufferedReader;
+import java.io.FileReader;
 
 /**
  * Created by Domi on 02.07.17.
@@ -26,8 +25,8 @@ public class BoarischAnalyzer extends Analyzer {
      */
     public BoarischAnalyzer() {
         try {
-            stopSet = WordlistLoader.getSnowballWordSet(IOUtils.getDecodingReader(SnowballFilter.class,
-                    DEFAULT_STOPWORD_FILE, StandardCharsets.UTF_8));
+            stopSet = WordlistLoader.getWordSet(new BufferedReader(new FileReader(DEFAULT_STOPWORD_FILE)));
+                    //WordlistLoader.getSnowballWordSet(IOUtils.getDecodingReader(SnowballFilter.class, DEFAULT_STOPWORD_FILE, StandardCharsets.UTF_8));
         } catch (Exception e) {
             e.printStackTrace();
         }
