@@ -6,7 +6,6 @@ import org.apache.lucene.analysis.standard.StandardFilter;
 import org.apache.lucene.analysis.standard.StandardTokenizer;
 import org.apache.lucene.util.IOUtils;
 
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -29,7 +28,7 @@ public class BoarischAnalyzer extends Analyzer {
         try {
             stopSet = WordlistLoader.getSnowballWordSet(IOUtils.getDecodingReader(SnowballFilter.class,
                     DEFAULT_STOPWORD_FILE, StandardCharsets.UTF_8));
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
